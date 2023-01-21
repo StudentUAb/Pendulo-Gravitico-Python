@@ -32,9 +32,8 @@ Para compilar colocamos na mesma pasta o ficheiro heun.py e no terminal escrevem
 🔧 Tecnologias utilizadas:
 ------------------
 
-- <strong>C++</strong>
-- <strong>QtCreator</strong>
-- <strong>CMake</strong>
+- <strong>Python 3.8.2</strong>
+- <strong>Visual Studio Code</strong>
 - <strong>MacOS</strong>
 
 💬 Fale comigo
