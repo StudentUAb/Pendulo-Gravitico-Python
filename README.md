@@ -7,7 +7,7 @@
 <p align="center">
 Grafico sobre Pêndulo Gravítico
 </p>
-<img src="small-angle.gif" >
+<align="center"><img src="small-angle.gif" >
 
 📌 Minha pagina do Pêndulo Gravítico
 ------------------
