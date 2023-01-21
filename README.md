@@ -1,6 +1,6 @@
 
 <h1 align="center">
-    <img width="600" src="python.png" />
+    <img width="600" src="python.jpg" />
 </h1>
 
 
