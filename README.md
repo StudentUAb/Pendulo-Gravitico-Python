@@ -24,6 +24,7 @@ Pela análise do gráfico obtido verifica-se que ocorre um amortecimento gradual
 Para compilar colocamos na mesma pasta o ficheiro heun.py e no terminal escrevemos:<br>
 <br>
 <strong>python3 heun.py</strong><br>
+<br>
 
 <img src="graficop.jpg" >
 
