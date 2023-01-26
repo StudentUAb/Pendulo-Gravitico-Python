@@ -29,7 +29,7 @@ Para compilar colocamos na mesma pasta o ficheiro heun.py e no terminal escrevem
 <strong>python3 heun.py</strong><br>
 <br>
 
-<img src="graficop.jpg" >
+<img src="graficopy.png" >
 
 
 
