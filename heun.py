@@ -18,12 +18,17 @@ g = 9.81 # Aceleração da gravidade em m/s^2
 cd = 0.1 
 # Raio do pêndulo
 R = 0.3 # convertido em metros
-
+t = 0.0;        #Valor inicial do tempo
+tend = 100.0;   # Valor final do tempo
+h = 0.1;        # Passo do tempo em segundos
 # Área frontal da esfera
 A = np.pi * R**2;
 
 # Coeficiente de arrasto aerodinâmico
 b =  1/2 * rho * cd * A;
+
+#Numero de ciclos
+ciclos = (tend - t)/h   
 
 # Valores Iniciais 
 theta0 = 0.05  # Ângulo inicial em radianos
@@ -35,10 +40,11 @@ h = 0.1        # Passo de tempo em segundos
 t = [t0]
 theta = [theta0]
 w = [w0]
-k1x_ = 0
-k1v_ = 0
-k2x_ = 0
-k2v_ = 0
+k1x_ = w[-1]
+k1v_ = -math.copysign(1, w[-1]) * (((b*L)/m) * w[-1]**2) - (g / L) * theta[-1]
+k2x_ = w[-1] + k1v_ * h
+k2v_ = -math.copysign(1, w[-1] + k1v_ * h) * (((b*L)/m )* (w[-1] + k1v_ * h)**2) - (g / L) * (theta[-1] + k1x_ * h)
+    
 k1x = [k1x_] * len(t)
 k1v = [k1v_] * len(t)
 k2x = [k2x_] * len(t)
@@ -57,19 +63,18 @@ while t[-1] < 100.0:
     w.append(w[-1] + ((k1v_ + k2v_) / 2.0)*h)
     
     # Atualização do tempo
-    t.append(t[-1] + h)
-    
+    t.append(round(t[-1] + h, 1))
     # Atualiza novos valores para os arrays k1x, k1v, k2x e k2v
     k1x.append(k1x_)
     k1v.append(k1v_)
     k2x.append(k2x_)
     k2v.append(k2v_)
     
-# linha para theta com linha vermelha
-plt.plot(t, theta, color='red')
+# linha para theta com linha vermelha   
+plt.plot(t, theta, color='red', linewidth=1, linestyle='solid', marker='o', markersize=2)
 
 # linha para w com linha azul
-plt.plot(t, w, color='blue')
+plt.plot(t, w, color='blue', linewidth=1, linestyle='solid', marker='x', markersize=2)
 
 # Adicionar uma legenda
 plt.legend(['theta', 'w'])
